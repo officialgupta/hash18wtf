@@ -1,18 +1,13 @@
-f = open('a_example.in')
-yourList = f.readlines()
-# yourList = [line.rstrip('\n') for line in f]
+with open('a_example.in', 'r') as f:
+	f_lines = f.readlines()
+	params = [line.strip().split() for line in f_lines]
 
-details = yourList[:]
-details = details[:1]
-rides = yourList[1:]
+	details = params[0]
+	rides = params[1:]
 
-details = details[0].split()
+	print('details')
+	print(details)
 
-print 'details'
-print details
-
-print 'rides'
-for a in rides:
-	a = a.split()
-	print a
-
+	print('rides')
+	for a in rides:
+		print(a)
